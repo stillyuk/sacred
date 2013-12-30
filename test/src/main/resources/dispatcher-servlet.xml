@@ -10,9 +10,8 @@
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="urlMap">
 			<props>
-				<prop key="sys/registe.do">systemController</prop>
+				<prop key="registe">systemController</prop>
 				<prop key="login">systemController</prop>
-				<prop key="/">systemController</prop>
 			</props>
 		</property>
 	</bean>
