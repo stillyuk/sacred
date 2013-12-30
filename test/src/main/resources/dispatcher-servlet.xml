@@ -6,11 +6,12 @@
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 	">
+	
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="urlMap">
 			<props>
 				<prop key="sys/registe.do">systemController</prop>
-				<prop key="/login.jsp">systemController</prop>
+				<prop key="/login">systemController</prop>
 			</props>
 		</property>
 	</bean>
@@ -27,5 +28,4 @@
 	</bean>
 	<bean id="systemController" class="web.SystemController">
 	</bean>
-	<mvc:default-servlet-handler/>
 </beans>
