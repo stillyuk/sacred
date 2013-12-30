@@ -22,11 +22,13 @@ div {
 </style>
 </head>
 <body background="../images/bg.jpg">
-	<div class="nav"><a href="sys/registe.do">注册</a></div>
+	<div class="nav"><a href="sys/login">注册</a></div>
 	<div class="center" style="width: 400px; height: 300px; margin-left: -200px; margin-top: -150px;">
-		用户名：<input type="text" id="username" /><br>
-		密码：<input type="text" id="password" /><br>
-		<input type="submit" />
+		<form action="login">
+			用户名：<input type="text" id="username" /><br>
+			密码：<input type="text" id="password" /><br>
+			<input type="submit" />
+		</form>
 	</div>
 </body>
 </html>

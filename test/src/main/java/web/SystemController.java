@@ -10,16 +10,22 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import service.UserService;
 
 public class SystemController extends MultiActionController {
-	
 	@Autowired
 	private UserService userService;
 	
+	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+		return new ModelAndView("login");
+	}
+	
 	public ModelAndView registe(HttpServletRequest request, HttpServletResponse response) {
+		if (userService.login("admin", "admin"))
+			return new ModelAndView("success");
 		return new ModelAndView("index");
 	}
 
-	public ModelAndView login() {
-		System.out.println("testController");
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, String username, String password) {
+		if (userService.login(username, password))
+			return new ModelAndView("success");
 		return new ModelAndView("login");
 	}
 }

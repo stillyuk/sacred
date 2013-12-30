@@ -1,5 +1,5 @@
 package service;
 
 public interface UserService {
-	boolean login(String userid, String username);
+	boolean login(String username, String password);
 }
