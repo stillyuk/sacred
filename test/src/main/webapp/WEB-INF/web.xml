@@ -8,14 +8,8 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-	<filter>
-		<filter-name>secure</filter-name>
-		<filter-class>secure.SecurityFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>secure</filter-name>
-		<url-pattern>*.do</url-pattern>
-	</filter-mapping>
+	<!-- <filter> <filter-name>secure</filter-name> <filter-class>secure.SecurityFilter</filter-class> </filter> 
+		<filter-mapping> <filter-name>secure</filter-name> <url-pattern>*.do</url-pattern> </filter-mapping> -->
 	<listener>
 		<listener-class>time.TimeListener</listener-class>
 	</listener>
@@ -33,7 +27,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
 </web-app>

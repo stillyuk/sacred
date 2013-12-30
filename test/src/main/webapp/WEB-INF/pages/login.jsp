@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>webinf</title>
+<script src="../jquery/jquery.js"></script>
 <script type="text/javascript" src="../js/init.js"></script>
 <style type="text/css">
 div {
@@ -16,7 +16,7 @@ div {
 }
 .center {
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 }
 </style>
