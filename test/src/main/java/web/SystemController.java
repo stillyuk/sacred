@@ -13,6 +13,6 @@ public class SystemController implements Controller {
 
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("testController");
-		return null;
+		return new ModelAndView("login");
 	}
 }
