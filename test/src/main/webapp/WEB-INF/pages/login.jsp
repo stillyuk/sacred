@@ -5,41 +5,7 @@
 <title>登陆系统</title>
 <script src="../jquery/jquery.js"></script>
 <script type="text/javascript" src="../js/init.js"></script>
-<style type="text/css">
-div {
-	border: 1px dotted green;
-	margin: 5px;
-}
-.nav {
-	float: right;
-	top: 10px;
-	right: 10px;
-}
-.divform {
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	width: 400px;
-	height: 300px;
-	padding: 5px;
-	margin-top: -150px;
-	margin-left: -200px;
-}
-.center {
-	position: absolute;
-	top: 40%;
-	left: 50%;
-}
-.btn {
-	position: absolute;
-	top: 85%;
-	left: 50%;
-	width: 84px;
-	height: 30px;
-	margin-left: -42px;
-	margin-top: -15px;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="../css/css.css" />
 </head>
 <body background="../images/bg.jpg">
 	<div class="nav"><a href="sys/login">Sign up</a></div>

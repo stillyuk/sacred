@@ -12,11 +12,11 @@ import service.UserService;
 public class SystemController extends MultiActionController {
 	@Autowired
 	private UserService userService;
-	
+
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
 		return new ModelAndView("login");
 	}
-	
+
 	public ModelAndView registe(HttpServletRequest request, HttpServletResponse response) {
 		if (userService.login("admin", "admin"))
 			return new ModelAndView("success");
