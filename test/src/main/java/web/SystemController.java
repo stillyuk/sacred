@@ -23,8 +23,8 @@ public class SystemController extends MultiActionController {
 		return new ModelAndView("index");
 	}
 
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, String username, String password) {
-		if (userService.login(username, password))
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+		if (userService.login("admin", "admin"))
 			return new ModelAndView("success");
 		return new ModelAndView("login");
 	}

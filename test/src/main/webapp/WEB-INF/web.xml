@@ -8,10 +8,16 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-	<!-- <filter> <filter-name>secure</filter-name> <filter-class>secure.SecurityFilter</filter-class> </filter> 
-		<filter-mapping> <filter-name>secure</filter-name> <url-pattern>*.do</url-pattern> </filter-mapping> -->
+	<filter>
+		<filter-name>secure</filter-name>
+		<filter-class>system.secure.SecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>secure</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
 	<listener>
-		<listener-class>time.TimeListener</listener-class>
+		<listener-class>system.time.TimeListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -29,4 +35,7 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+	</welcome-file-list>
 </web-app>
