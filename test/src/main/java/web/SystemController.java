@@ -24,7 +24,9 @@ public class SystemController extends MultiActionController {
 	}
 
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
-		if (userService.login("admin", "admin"))
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		if (userService.login(username, password))
 			return new ModelAndView("success");
 		return new ModelAndView("login");
 	}

@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ok</title>
+<title>登陆系统</title>
 <script src="../jquery/jquery.js"></script>
 <script type="text/javascript" src="../js/init.js"></script>
 <style type="text/css">
 div {
-	border: 1px dotted blue;
+	border: 1px dotted green;
 	margin: 5px;
 }
 .nav {
@@ -16,9 +16,14 @@ div {
 	right: 10px;
 }
 .divform {
+	position: absolute;
+	top: 40%;
+	left: 50%;
 	width: 400px;
 	height: 300px;
 	padding: 5px;
+	margin-top: -150px;
+	margin-left: -200px;
 }
 .center {
 	position: absolute;
@@ -27,29 +32,27 @@ div {
 }
 .btn {
 	position: absolute;
-	top: 75%;
+	top: 85%;
 	left: 50%;
-	width: 88px;
+	width: 84px;
 	height: 30px;
-	margin-left: -44px;
-	margin-top: -15px;"
+	margin-left: -42px;
+	margin-top: -15px;
 }
 </style>
 </head>
 <body background="../images/bg.jpg">
-	<div>
-		<div class="nav"><a href="sys/login">Sign up</a></div>
-		<div class="nav"><a href="sys/login">Sign in</a></div>
-	</div>
-	<div class="center" style="width: 400px; height: 300px; margin-left: -200px; margin-top: -150px;">
-		<form class="divform" action="login">
-			<div style="border:1px dotted red;">
-				<div>用户名：</div>
-				<div style="position: absolute; float: right;"><input type="text" id="username" /></div>
+	<div class="nav"><a href="sys/login">Sign up</a></div>
+	<div class="nav"><a href="sys/login">Sign in</a></div>
+	<div class="divform">
+		<form action="login">
+			<div style="height: 80px;">
+				<div style="width: 100px;">用户名：</div>
+				<div style="float: right;"><input type="text" id="username" name="username" /></div>
 			</div>
-			<div>
-				<div style="width:100px;">密码：</div>
-				<div style="position: absolute; float: right;"><input type="text" id="password" /></div>
+			<div style="height: 80px;">
+				<div style="width: 100px;">密码：</div>
+				<div style="float: right;"><input type="text" id="password" name="password" /></div>
 			</div>
 			<div class="btn"><input type="submit" value="Sign in" /></div>
 		</form>
