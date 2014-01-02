@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>float</title>
+<style>
+.test:AFTER {
+	content: "(adsf)";
+}
+</style>
 </head>
 <body>
 	<div style="width: 600px; height: 500px; border: solid 1px blue; background-color: yellow;">
@@ -18,7 +23,7 @@
 			跟在浮动元素后边的span
 		</span>
 		<p>abad</p>
-		<div style="background-color: red; width:100px; height: 20px;">asdf</div>
+		<div style="background-color: red;" class="test">asdf</div>
 	</div>
 </body>
 </html>

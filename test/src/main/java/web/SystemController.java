@@ -14,7 +14,11 @@ public class SystemController extends MultiActionController {
 	private UserService userService;
 
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-		return new ModelAndView("float");
+		return new ModelAndView("index");
+	}
+	
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+		return new ModelAndView("login");
 	}
 
 	public ModelAndView registe(HttpServletRequest request, HttpServletResponse response) {
@@ -23,11 +27,13 @@ public class SystemController extends MultiActionController {
 		return new ModelAndView("index");
 	}
 
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView signIn(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if (userService.login(username, password))
+		if (userService.login(username, password)) {
+			request.getSession().setAttribute("user", username);
 			return new ModelAndView("success");
+		}
 		return new ModelAndView("login");
 	}
 }

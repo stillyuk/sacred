@@ -19,6 +19,7 @@
 			<props>
 				<prop key="registe">systemController</prop>
 				<prop key="login">systemController</prop>
+				<prop key="signIn">systemController</prop>
 				<prop key="index">systemController</prop>
 			</props>
 		</property>

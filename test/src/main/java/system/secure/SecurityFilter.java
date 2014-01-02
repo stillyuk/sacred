@@ -18,11 +18,12 @@ public class SecurityFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
 			ServletException {
-		System.out.println("正在检测...");
 		if (request instanceof HttpServletRequest) {
 			HttpServletRequest req = (HttpServletRequest) request;
 			if (req.getSession().getAttribute("user") == null) {
 				System.out.println("用户未登入！请登入");
+			} else {
+				System.out.println("通过验证！");
 			}
 		}
 		chain.doFilter(request, response);

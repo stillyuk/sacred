@@ -30,6 +30,7 @@ input {
 }
 
 .head-action {
+	padding: 15px 0;
 	float: right;
 }
 
@@ -79,7 +80,7 @@ input {
 
 .button {
 	cursor: pointer;
-	background-color : #EEEEEE;
+	background-color: #EEEEEE;
 	border: 1px solid #D5D5D5;
 	border-radius: 3px;
 	color: #333333;
@@ -109,4 +110,8 @@ label,input[type="text"],input[type="password"] {
 	border: 1px solid #CCCCCC;
 	padding: 5px 10px;
 	width: 200px;
+}
+
+.tip {
+	color: #CCCCCC
 }

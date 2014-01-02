@@ -9,21 +9,25 @@
 </head>
 <body>
 	<div class="head">
-		<input class="search" id="search" type="text" />
-		<div id="tip" style="position: absolute; top:30px; left:42px; color:#CCCCCC">Search</div>
-	</div>
-	<div class="head-action">
-		<a class="button primary" href="">Sign in</a>
-		<a class="button" href="">Sign up</a>
+		<div style="width:300px; height: 25px; float: left"></div>
+		<div style="float:left;">
+			<input class="search" id="search" type="text" />
+			<span id="tip">Search</span>
+		</div>
+		<div class="head-action">
+			<a class="button primary" href="">Sign in</a>
+			<a class="button" href="">Sign up</a>
+		</div>
+		<div style="clear: both;"></div>
 	</div>
 	<div class="auth-form" id="loginForm">
-		<form action="login">
+		<form method="post" action="signIn">
 			<div class="auth-form-head"><h1>Sign in</h1></div>
 			<div class="auth-form-body">
-				<label for="login_field">Username or Email</label>
-				<input id="login_field" class="input-block" type="text" />
-				<label for="password_field">Password</label>
-				<input id="password_field" class="input-block" type="password" />
+				<label for="username">Username or Email</label>
+				<input name="username" class="input-block" type="text" />
+				<label for="password">Password</label>
+				<input name="password" class="input-block" type="password" />
 				<input class="button" type="submit" value="Sign in" />
 			</div>
 		</form>
