@@ -9,10 +9,12 @@
 </head>
 <body>
 	<div class="head">
-		<div class="head-action">
-			<a class="button primary" href="">Sign in</a>
-			<a class="button" href="">Sign up</a>
-		</div>
+		<input class="search" id="search" type="text" />
+		<div id="tip" style="position: absolute; top:30px; left:42px; color:#CCCCCC">Search</div>
+	</div>
+	<div class="head-action">
+		<a class="button primary" href="">Sign in</a>
+		<a class="button" href="">Sign up</a>
 	</div>
 	<div class="auth-form" id="loginForm">
 		<form action="login">
@@ -21,7 +23,7 @@
 				<label for="login_field">Username or Email</label>
 				<input id="login_field" class="input-block" type="text" />
 				<label for="password_field">Password</label>
-				<input id="password_field" class="input-block" type="text" />
+				<input id="password_field" class="input-block" type="password" />
 				<input class="button" type="submit" value="Sign in" />
 			</div>
 		</form>

@@ -1,13 +1,22 @@
-//$(function() {
-//	$("input[type=text]").val("请输入");
-//	$("input[type=text]").focus(function() {
-//		if ($(this).val() == "请输入") {
-//			$(this).val("");
-//		}
-//	});
-//	$("input[type=text]").blur(function() {
-//		if ($(this).val() == "") {
-//			$(this).val("请输入");
-//		}
-//	});
-//});
+$(function() {
+	$("#search").focus(function() {
+		$(this).keyup(function() {
+			if ($(this).val() != "") {
+				$("#tip").hide();
+			}
+		});
+		$(this).animate({
+			width : "400px"
+		}, 400);
+	});
+	$("#search").blur(function() {
+		$(this).animate({
+			width : "200px"
+		}, 400);
+	});
+	$("#search").keyup(function() {
+		if ($(this).val() === "") {
+			$("#tip").show();
+		}
+	});
+});

@@ -20,8 +20,7 @@ label {
 	font-weight: bold;
 }
 
-input[type="text"] {
-	width: 100%;
+input {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
@@ -44,7 +43,7 @@ input[type="text"] {
 }
 
 .auth-form-head {
-	background-color: #6C8393;
+	background-image: linear-gradient(rgb(127, 149, 165), rgb(108, 131, 147));
 	padding: 10px 20px;
 	border-width: 1px;
 	position: relative;
@@ -79,7 +78,8 @@ input[type="text"] {
 }
 
 .button {
-	cursor: pointer; background-color : #EEEEEE;
+	cursor: pointer;
+	background-color : #EEEEEE;
 	border: 1px solid #D5D5D5;
 	border-radius: 3px;
 	color: #333333;
@@ -102,4 +102,11 @@ label,input[type="text"],input[type="password"] {
 	text-decoration: none;
 	color: white;
 	margin-left: 5px;
+}
+
+.search {
+	border-radius: 3px;
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 200px;
 }
