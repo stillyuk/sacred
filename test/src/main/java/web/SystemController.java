@@ -14,7 +14,7 @@ public class SystemController extends MultiActionController {
 	private UserService userService;
 
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-		return new ModelAndView("login");
+		return new ModelAndView("float");
 	}
 
 	public ModelAndView registe(HttpServletRequest request, HttpServletResponse response) {
