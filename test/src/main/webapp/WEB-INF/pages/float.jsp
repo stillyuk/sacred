@@ -7,13 +7,18 @@
 <title>float</title>
 </head>
 <body>
-<!-- 	<div style="height: 200px; width: 200px; border: 1px solid red"> -->
-<!-- 		<span style="float: left; width: 150px; height: 150px; margin: 5px; padding: 5px; border: solid 1px red; background-color: Olive;"> -->
-<!-- 			浮动元素span -->
-<!-- 		</span> -->
-<!-- 	</div> -->
-		<span style="margin: 50px; padding: 0px; border: solid 1px blue; background-color: Olive;">
-			浮动元素span
+	<div style="width: 600px; height: 500px; border: solid 1px blue; background-color: yellow;">
+		<div style="float: left; width: 250px; height: 250px; border: solid 1px Aqua; background-color: gray; margin: 10px 0 0 10px;">
+			浮动DIV
+		</div>
+		<div style="background-color: red; border: solid 1px green; width: 300px; height: 150px;">
+			跟在浮动元素后边的DIV
+		</div>
+		<span style="background-color: red; border: solid 1px green; margin: 0 0 0 -50px;">
+			跟在浮动元素后边的span
 		</span>
+		<p>abad</p>
+		<div style="background-color: red; width:100px; height: 20px;">asdf</div>
+	</div>
 </body>
 </html>
