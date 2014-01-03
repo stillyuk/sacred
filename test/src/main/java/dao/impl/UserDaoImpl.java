@@ -1,5 +1,6 @@
 package dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -33,5 +34,18 @@ public class UserDaoImpl implements UserDao {
 			return true;
 		}
 		return false;
+	}
+
+	public boolean registe(String username, String password) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		User user = new User();
+		user.setUserId(new Date().toString());
+		user.setUsername(username);
+		user.setPassword(password);
+		session.save(user);
+		tx.commit();
+		session.close();
+		return true;
 	}
 }

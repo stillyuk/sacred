@@ -16,15 +16,22 @@ public class SystemController extends MultiActionController {
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
 		return new ModelAndView("index");
 	}
-	
+
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
 		return new ModelAndView("login");
 	}
 
 	public ModelAndView registe(HttpServletRequest request, HttpServletResponse response) {
-		if (userService.login("admin", "admin"))
-			return new ModelAndView("success");
-		return new ModelAndView("index");
+		return new ModelAndView("registe");
+	}
+
+	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		if (userService.registe(username, password)) {
+			return new ModelAndView("login");
+		}
+		return new ModelAndView("error");
 	}
 
 	public ModelAndView signIn(HttpServletRequest request, HttpServletResponse response) {
@@ -35,5 +42,9 @@ public class SystemController extends MultiActionController {
 			return new ModelAndView("success");
 		}
 		return new ModelAndView("login");
+	}
+
+	public ModelAndView error(HttpServletRequest request, HttpServletResponse response) {
+		return new ModelAndView("error");
 	}
 }

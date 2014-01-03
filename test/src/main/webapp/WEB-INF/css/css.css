@@ -34,32 +34,31 @@ input {
 	float: right;
 }
 
-.auth-form {
+.my-form {
 	margin: 60px auto;
 	width: 400px;
 }
 
-.auth-form form {
+.my-form form {
 	border-radius: 4px;
 }
 
-.auth-form-head {
+.my-form-head {
 	background-image: linear-gradient(rgb(127, 149, 165), rgb(108, 131, 147));
 	padding: 10px 20px;
 	border-width: 1px;
-	position: relative;
 	border-style: solid;
 	border-color: #6E8290 #6E8290 #586873;
 	border-radius: 4px 4px 0 0;
 }
 
-.auth-form-head h1 {
+.my-form-head h1 {
 	font-size: 16px;
 	margin-bottom: 0;
 	margin-top: 0;
 }
 
-.auth-form-body {
+.my-form-body {
 	box-sizing: border-box;
 	border: 1px solid #D8DEE2;
 	padding: 20px;
@@ -71,7 +70,7 @@ input {
 	width: 100%;
 }
 
-.auth-form-body .input-block {
+.my-form-body .input-block {
 	padding: 7px 8px;
 	margin-top: 5px;
 	margin-bottom: 15px;

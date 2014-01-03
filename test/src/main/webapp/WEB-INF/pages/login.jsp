@@ -20,10 +20,10 @@
 		</div>
 		<div style="clear: both;"></div>
 	</div>
-	<div class="auth-form" id="loginForm">
+	<div class="my-form" id="loginForm">
 		<form method="post" action="signIn">
-			<div class="auth-form-head"><h1>Sign in</h1></div>
-			<div class="auth-form-body">
+			<div class="my-form-head"><h1>Sign in</h1></div>
+			<div class="my-form-body">
 				<label for="username">Username or Email</label>
 				<input name="username" class="input-block" type="text" />
 				<label for="password">Password</label>
