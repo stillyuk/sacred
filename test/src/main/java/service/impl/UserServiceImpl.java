@@ -4,16 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import service.UserService;
 import dao.UserDao;
+import domain.User;
 
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 
-	public boolean login(String username, String password) {
-		return userDao.login(username, password);
+	public boolean login(User user) {
+		return userDao.login(user);
 	}
 	
-	public boolean registe(String username, String password) {
-		return userDao.registe(username, password);
+	public boolean registe(User user) {
+		return userDao.registe(user);
 	}
 }

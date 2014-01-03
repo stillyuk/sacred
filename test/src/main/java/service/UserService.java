@@ -1,6 +1,8 @@
 package service;
 
+import domain.User;
+
 public interface UserService {
-	boolean login(String username, String password);
-	boolean registe(String username, String password);
+	boolean login(User user);
+	boolean registe(User user);
 }

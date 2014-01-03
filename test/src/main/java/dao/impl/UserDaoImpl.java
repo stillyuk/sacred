@@ -19,12 +19,12 @@ public class UserDaoImpl implements UserDao {
 	private SessionFactory sessionFactory;
 
 	@SuppressWarnings("rawtypes")
-	public boolean login(String username, String password) {
+	public boolean login(User user) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		Criteria c = session.createCriteria(User.class);
-		Criterion username0 = Restrictions.eq("username", username);
-		Criterion password0 = Restrictions.eq("password", password);
+		Criterion username0 = Restrictions.eq("username", user.getUsername());
+		Criterion password0 = Restrictions.eq("password", user.getUsername());
 		c.add(username0);
 		c.add(password0);
 		List lists = c.list();
@@ -36,13 +36,10 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 
-	public boolean registe(String username, String password) {
+	public boolean registe(User user) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		User user = new User();
 		user.setUserId(new Date().toString());
-		user.setUsername(username);
-		user.setPassword(password);
 		session.save(user);
 		tx.commit();
 		session.close();
