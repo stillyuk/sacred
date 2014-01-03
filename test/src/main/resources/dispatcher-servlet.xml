@@ -20,6 +20,7 @@
 				<prop key="signIn">systemController</prop>
 				<prop key="signUp">systemController</prop>
 				<prop key="index">systemController</prop>
+				<prop key="sys/admin">systemController</prop>
 				<prop key="error">systemController</prop>
 			</props>
 		</property>
