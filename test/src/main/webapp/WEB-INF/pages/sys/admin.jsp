@@ -6,5 +6,6 @@
 </head>
 <body>
 	<div class="my-link-button">添加角色</div>
+	<div>切换主题</div>
 </body>
 </html>

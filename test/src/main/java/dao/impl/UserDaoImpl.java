@@ -23,10 +23,10 @@ public class UserDaoImpl implements UserDao {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		Criteria c = session.createCriteria(User.class);
-		Criterion username0 = Restrictions.eq("username", user.getUsername());
-		Criterion password0 = Restrictions.eq("password", user.getUsername());
-		c.add(username0);
-		c.add(password0);
+		Criterion username = Restrictions.eq("username", user.getUsername());
+		Criterion password = Restrictions.eq("password", user.getUsername());
+		c.add(username);
+		c.add(password);
 		List lists = c.list();
 		tx.commit();
 		session.close();
