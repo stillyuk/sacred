@@ -5,25 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import service.UserService;
 
-public class SystemController extends MultiActionController {
+public class SystemController extends CustomMultiActionController {
 	@Autowired
 	private UserService userService;
-
-	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-		return new ModelAndView("index");
-	}
-
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
-		return new ModelAndView("login");
-	}
-
-	public ModelAndView registe(HttpServletRequest request, HttpServletResponse response) {
-		return new ModelAndView("registe");
-	}
 
 	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
@@ -41,10 +28,6 @@ public class SystemController extends MultiActionController {
 			request.getSession().setAttribute("user", username);
 			return new ModelAndView("success");
 		}
-		return new ModelAndView("login");
-	}
-
-	public ModelAndView error(HttpServletRequest request, HttpServletResponse response) {
 		return new ModelAndView("error");
 	}
 }

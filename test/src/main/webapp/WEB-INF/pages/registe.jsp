@@ -16,12 +16,12 @@
 			registe
 		</div>
 		<div class="my-form-body">
-			<form>
+			<form method="post" action="signUp">
 				用户名：
 				<input class="my-form-input" type="text" name="username" tabindex="1" />
 				密码：
 				<input class="my-form-input" type="password" name="password" tabindex="2" />
-				<input class="my-form-button" type="button" value="注册" tabindex="3" />
+				<input class="my-form-button" type="submit" value="注册" tabindex="3" />
 			</form>
 		</div>
 	</div>
