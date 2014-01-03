@@ -6,9 +6,13 @@
 	<class name="User">
 		<id name="userId">
 			<column name="USERID"></column>
-			<generator class="assigned"></generator>
+			<generator class="uuid"></generator>
 		</id>
 		<property name="username" column="USERNAME" />
 		<property name="password" column="PASSWORD" />
+		<set name="roles" cascade="save-update">
+			<key column="userid" />
+			<many-to-many class="Role" column="roleid" />
+		</set>
 	</class>
 </hibernate-mapping>
