@@ -23,7 +23,7 @@
 			<ref bean="job" />
 		</property>
 		<property name="cronExpression">
-			<value>0 0/1 19 * * ?</value>
+			<value>0/10 0/1 * * * ?</value>
 		</property>
 	</bean>
 	<bean lazy-init="false" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
