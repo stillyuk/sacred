@@ -1,5 +1,6 @@
 package mail;
 
+import java.io.File;
 import java.util.Properties;
 
 import javax.mail.Address;
@@ -16,6 +17,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 
 public class MyJavaMailTest {
 
@@ -54,7 +56,7 @@ public class MyJavaMailTest {
 		Transport.send(message);
 	}
 
-	@Test
+
 	public void testSpringMail() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("springMail.xml");
 		JavaMailSender sender = (JavaMailSender) ctx.getBean("springMail");
@@ -68,5 +70,19 @@ public class MyJavaMailTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void testAttachedSpringMail() throws Exception {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("springAttachedMail.xml");
+		JavaMailSender sender = (JavaMailSender) ctx.getBean("springMail");
+		MimeMessage message = sender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message, true);
+		helper.setTo("191295604@qq.com");
+		helper.setFrom("18768105877@163.com");
+		helper.setSubject("spring mail test!");
+		helper.setText("springAttachedMail的简单发送测试");
+		helper.addAttachment("test", new File("D:/ojdbc7.jar"));
+		sender.send(message);
 	}
 }
