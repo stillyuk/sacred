@@ -7,11 +7,11 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-@Component
 @Aspect
+@Component
 public class Aop {
-	
-	Logger logger = Logger.getLogger(Aop.class);
+
+	private static Logger logger = Logger.getLogger(Aop.class);
 
 	@Pointcut("within(web..*)")
 	public void pointcut() {}
@@ -21,10 +21,9 @@ public class Aop {
 		logger.info("testing...");
 	}
 
-	@AfterThrowing("pointcut()")
-	public void sendMail() {
+	@AfterThrowing(value="pointcut()", throwing="ex")
+	public void sendMail(Exception ex) {
 		logger.info("system error");
-		
-	
+		ex.printStackTrace();
 	}
 }
