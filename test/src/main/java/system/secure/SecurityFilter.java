@@ -10,10 +10,13 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-public class SecurityFilter implements Filter {
+import org.apache.log4j.Logger;
 
+public class SecurityFilter implements Filter {
+	Logger logger = Logger.getLogger(SecurityFilter.class);
+	
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("启动安全检查过滤器...");
+		logger.info("启动安全检查过滤器...");
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
@@ -21,15 +24,14 @@ public class SecurityFilter implements Filter {
 		if (request instanceof HttpServletRequest) {
 			HttpServletRequest req = (HttpServletRequest) request;
 			if (req.getSession().getAttribute("user") == null) {
-				
 			} else {
-				System.out.println("通过验证！");
+				logger.info("通过验证！");
 			}
 		}
 		chain.doFilter(request, response);
 	}
 
 	public void destroy() {
-		System.out.println("关闭安全检查过滤器...");
+		logger.info("关闭安全检查过滤器...");
 	}
 }

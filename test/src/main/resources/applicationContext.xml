@@ -7,11 +7,9 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/aop
-		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
 	">
-	<context:component-scan base-package="daoimpl" />
-	<context:component-scan base-package="serviceimpl" />
-	<context:component-scan base-package="web" />
+	<context:component-scan base-package="dao, service" />
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">
 			<value>com.mysql.jdbc.Driver</value>
