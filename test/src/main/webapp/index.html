@@ -5,22 +5,24 @@
 <title>Insert title here</title>
 <script src="resource/jquery.js"></script>
 <script>
-	$.ajax({
-		asycn: true,
-		type: "delete",
-		url: "rest/1",
-		data: {},
-		success: function() {
-			
-		},
-		error: function() {
-			
-		},
-		dataType: "text"
+	$(function() {
+		$.ajax({
+			asycn : true,
+			type : "delete",
+			url : "rest/1",
+			data : {},
+			success : function() {
+
+			},
+			error : function() {
+
+			},
+			dataType : "text"
+		});
 	});
 </script>
 </head>
 <body>
-
+	<h1>hello</h1>
 </body>
 </html>

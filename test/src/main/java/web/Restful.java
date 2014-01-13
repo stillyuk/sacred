@@ -26,6 +26,6 @@ public class Restful {
 	@RequestMapping(value="/{id}" ,method=RequestMethod.DELETE)
 	public ModelAndView restful(@PathVariable String id) {
 		logger.debug("debug");
-		throw new RuntimeException("runtime");
+		return null;
 	}
 }
