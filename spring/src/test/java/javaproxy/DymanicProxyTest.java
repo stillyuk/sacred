@@ -11,7 +11,7 @@ public class DymanicProxyTest {
 		Object target = new ProtocolImpl();
 		DynamicProxy dynamicProxy = new DynamicProxy(target);
 		Vacuous protocol = (Vacuous) Proxy.newProxyInstance(
-				target.getClass().getClassLoader(),
+				dynamicProxy.getClass().getClassLoader(),
 				target.getClass().getInterfaces(), dynamicProxy);
 		protocol.vacuous();
 	}
