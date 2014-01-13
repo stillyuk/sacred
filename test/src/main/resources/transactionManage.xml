@@ -10,13 +10,12 @@
 		http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="dataSource">
-			<ref bean="dataSource" />
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 
-	<bean id="transactionProxyFactoryBean"
-		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean id="transactionProxyFactoryBean" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager">
 			<ref bean="transactionManager" />
 		</property>
@@ -24,7 +23,7 @@
 			<ref bean="userServiceImpl" />
 		</property>
 		<property name="proxyInterfaces">
-			<ref bean="service.UserService" />
+			<value>service.UserService</value>
 		</property>
 		<property name="transactionAttributes">
 			<props>

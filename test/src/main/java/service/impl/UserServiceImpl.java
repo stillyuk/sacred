@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	public boolean login(User user) {
-		userDao.transaction("insert into user(userid, username, password) values('1', '1', '1')");
+		userDao.transaction("insert into user(userid, username, password) values('11', '1', '1')");
 //		userDao.transaction("xxx");
 		return true;
 	}

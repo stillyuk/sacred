@@ -51,10 +51,8 @@ public class UserDaoImpl implements UserDao {
 
 	public boolean transaction(String sql) {
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
 		Query query= session.createSQLQuery(sql);
 		query.executeUpdate();
-		tx.commit();
 		session.close();
 		return false;
 	}

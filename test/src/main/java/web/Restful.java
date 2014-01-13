@@ -15,9 +15,9 @@ import domain.User;
 @RequestMapping("rest")
 public class Restful {
 	private static Logger logger = Logger.getLogger(Restful.class);
-	
+
 	@Autowired
-	private UserService userService;
+	private UserService userServiceImpl;
 
 	/*
 	 * 
@@ -33,7 +33,7 @@ public class Restful {
 	@RequestMapping(value="/{id}" ,method=RequestMethod.DELETE)
 	public ModelAndView restful(@PathVariable String id) {
 		User user = new User();
-		userService.login(user);
+		userServiceImpl.login(user);
 		throw new RuntimeException("spring mail exception");
 	}
 }
