@@ -7,9 +7,13 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/aop
-		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-	">
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<import resource="springMail.xml"/>
+	<import resource="transactionManage.xml"/>
+	
 	<context:component-scan base-package="dao, service" />
+
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">
 			<value>com.mysql.jdbc.Driver</value>
@@ -24,6 +28,7 @@
 			<value>123456</value>
 		</property>
 	</bean>
+
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource">
 			<ref bean="dataSource" />
@@ -42,14 +47,4 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="userService" class="service.impl.UserServiceImpl"></bean>
-	<bean id="userDao" class="dao.impl.UserDaoImpl"></bean>
-	<bean id="systemController" class="web.SystemController"></bean>
-	<bean id="transaction" class="tx.Transactions"></bean>
-	<aop:config>
-		<aop:pointcut id="pointcut" expression="execution(* dao..*.*(..))" />
-		<aop:aspect id="aspect" ref="transaction">
-			<aop:after-throwing method="afterThrow" throwing="ex" pointcut-ref="pointcut"/>
-		</aop:aspect>
-	</aop:config>
 </beans>

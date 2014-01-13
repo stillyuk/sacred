@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,7 +20,7 @@ import domain.User;
 public class UserDaoImpl implements UserDao {
 	@Autowired
 	private SessionFactory sessionFactory;
-
+	
 	@SuppressWarnings("rawtypes")
 	public boolean login(User user) {
 		Session session = sessionFactory.openSession();
@@ -46,5 +47,15 @@ public class UserDaoImpl implements UserDao {
 		tx.commit();
 		session.close();
 		return true;
+	}
+
+	public boolean transaction(String sql) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		Query query= session.createSQLQuery(sql);
+		query.executeUpdate();
+		tx.commit();
+		session.close();
+		return false;
 	}
 }
