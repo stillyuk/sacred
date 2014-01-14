@@ -3,10 +3,13 @@ package  wsyumi.system.time;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TimeListener implements ServletContextListener {
-	Logger logger = Logger.getLogger(TimeListener.class);
+	
+	Logger logger = LogManager.getLogger();
+	
 	private long start;
 
 	public void contextInitialized(ServletContextEvent sce) {

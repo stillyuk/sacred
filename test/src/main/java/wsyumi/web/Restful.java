@@ -1,6 +1,7 @@
 package wsyumi.web;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,8 @@ import wsyumi.service.UserService;
 @Controller
 @RequestMapping("rest")
 public class Restful {
-	private static Logger logger = Logger.getLogger(Restful.class);
+
+	Logger logger = LogManager.getLogger();
 
 	@Autowired
 	private UserService userServiceTransaction;
@@ -31,7 +33,7 @@ public class Restful {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/{id}" ,method=RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ModelAndView restful(@PathVariable String id) {
 		User user = new User();
 		userServiceTransaction.login(user);

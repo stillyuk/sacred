@@ -10,10 +10,11 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SecurityFilter implements Filter {
-	Logger logger = Logger.getLogger(SecurityFilter.class);
+	Logger logger = LogManager.getLogger();
 	
 	public void init(FilterConfig filterConfig) throws ServletException {
 		logger.info("启动安全检查过滤器...");
