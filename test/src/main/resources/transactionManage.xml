@@ -15,21 +15,4 @@
 		</property>
 	</bean>
 
-	<bean id="userServiceTransaction" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
-		<property name="transactionManager">
-			<ref bean="transactionManager" />
-		</property>
-		<property name="target">
-			<ref bean="userDaoImpl" />
-		</property>
-		<property name="proxyInterfaces">
-			<value>wsyumi.dao.UserDao</value>
-		</property>
-		<property name="transactionAttributes">
-			<props>
-				<prop key="*">PROPAGATION_REQUIRED</prop>
-			</props>
-		</property>
-	</bean>
-
 </beans>

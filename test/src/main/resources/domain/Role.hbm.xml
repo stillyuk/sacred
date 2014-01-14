@@ -5,9 +5,9 @@
 <hibernate-mapping package="wsyumi.domain">
 	<class name="Role">
 		<id name="roleId">
-			<column name="roleID"></column>
-			<generator class="assigned"></generator>
+			<column name="ROLEID"></column>
+			<generator class="native"></generator>
 		</id>
-		<property name="rolename" column="roleNAME" />
+		<property name="rolename" column="ROLENAME" />
 	</class>
 </hibernate-mapping>
