@@ -12,12 +12,22 @@ import org.springframework.web.servlet.ModelAndView;
 import wsyumi.domain.User;
 import wsyumi.service.UserService;
 
+/**
+ * @author jiangyukun
+ *
+ */
 @Controller
 @RequestMapping("rest")
 public class Restful {
 
+	/**
+	 * 
+	 */
 	Logger logger = LogManager.getLogger();
 
+	/**
+	 * 
+	 */
 	@Autowired
 	private UserService userServiceTransaction;
 

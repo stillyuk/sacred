@@ -17,9 +17,6 @@
 		<Root level="debug">
 			<AppenderRef ref="stdout" />
 		</Root>
-		<logger name="wsyumi" level="info" additivity="false">
-			<AppenderRef ref="infoFile" />
-		</logger>
 		<logger name="wsyumi" level="debug" additivity="false">
 			<AppenderRef ref="stdout" />
 			<AppenderRef ref="debugFile" />
