@@ -1,6 +1,6 @@
-package dao;
+package  wsyumi.dao;
 
-import domain.User;
+import wsyumi.domain.User;
 
 public interface UserDao {
 	boolean login(User user);

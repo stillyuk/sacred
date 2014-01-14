@@ -1,4 +1,4 @@
-package aop;
+package  wsyumi.aop;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -10,7 +10,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
-import utils.MailMessageUtil;
+import wsyumi.utils.MailMessageUtil;
 
 @Aspect
 @Component

@@ -12,7 +12,7 @@
 	<import resource="springMail.xml"/>
 	<import resource="transactionManage.xml"/>
 	
-	<context:component-scan base-package="dao, service" />
+	<context:component-scan base-package="wsyumi" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">

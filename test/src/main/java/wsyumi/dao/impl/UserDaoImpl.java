@@ -1,4 +1,4 @@
-package dao.impl;
+package  wsyumi.dao.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -13,8 +13,8 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import dao.UserDao;
-import domain.User;
+import wsyumi.dao.UserDao;
+import wsyumi.domain.User;
 
 @Component
 public class UserDaoImpl implements UserDao {

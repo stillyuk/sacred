@@ -1,11 +1,11 @@
-package service.impl;
+package  wsyumi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import service.UserService;
-import dao.UserDao;
-import domain.User;
+import wsyumi.dao.UserDao;
+import wsyumi.domain.User;
+import wsyumi.service.UserService;
 
 @Component
 public class UserServiceImpl implements UserService {

@@ -15,7 +15,7 @@
 		</property>
 	</bean>
 
-	<bean id="transactionProxyFactoryBean" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean id="userServiceTransaction" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager">
 			<ref bean="transactionManager" />
 		</property>
@@ -23,7 +23,7 @@
 			<ref bean="userServiceImpl" />
 		</property>
 		<property name="proxyInterfaces">
-			<value>service.UserService</value>
+			<value>wsyumi.service.UserService</value>
 		</property>
 		<property name="transactionAttributes">
 			<props>

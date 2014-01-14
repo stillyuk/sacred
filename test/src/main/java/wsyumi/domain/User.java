@@ -1,4 +1,4 @@
-package domain;
+package  wsyumi.domain;
 
 import java.util.Set;
 

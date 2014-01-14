@@ -1,8 +1,10 @@
 package task;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
+
+import wsyumi.task.Task;
 
 public class TaskTest {
 	private Task task = new Task();

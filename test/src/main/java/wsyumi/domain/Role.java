@@ -1,4 +1,4 @@
-package domain;
+package  wsyumi.domain;
 
 public class Role {
 	private String roleId;

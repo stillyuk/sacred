@@ -3,7 +3,7 @@
  * author jiangyukun
  */
 
-package web;
+package  wsyumi.web;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

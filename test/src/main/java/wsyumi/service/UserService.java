@@ -1,6 +1,6 @@
-package service;
+package  wsyumi.service;
 
-import domain.User;
+import wsyumi.domain.User;
 
 public interface UserService {
 	boolean login(User user);

@@ -1,4 +1,4 @@
-package tx;
+package  wsyumi.tx;
 
 public class Transactions {
 	public void logger() {

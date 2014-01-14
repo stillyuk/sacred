@@ -1,4 +1,4 @@
-package web;
+package  wsyumi.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
-import service.UserService;
-import domain.User;
+import wsyumi.domain.User;
+import wsyumi.service.UserService;
 
 public class SystemController extends CustomMultiActionController {
 	

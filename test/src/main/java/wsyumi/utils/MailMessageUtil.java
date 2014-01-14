@@ -1,4 +1,4 @@
-package utils;
+package  wsyumi.utils;
 
 import org.springframework.mail.SimpleMailMessage;
 
