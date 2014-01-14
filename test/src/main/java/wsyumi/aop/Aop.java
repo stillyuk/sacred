@@ -22,7 +22,7 @@ public class Aop {
 
 	Logger logger = LogManager.getLogger();
 
-	@Pointcut("within(web..*)")
+	@Pointcut("within(wsyumi..*)")
 	public void pointcut() {}
 
 	@Before("pointcut()")
