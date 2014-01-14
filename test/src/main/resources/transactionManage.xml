@@ -20,10 +20,10 @@
 			<ref bean="transactionManager" />
 		</property>
 		<property name="target">
-			<ref bean="userServiceImpl" />
+			<ref bean="userDaoImpl" />
 		</property>
 		<property name="proxyInterfaces">
-			<value>wsyumi.service.UserService</value>
+			<value>wsyumi.dao.UserDao</value>
 		</property>
 		<property name="transactionAttributes">
 			<props>

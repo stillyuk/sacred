@@ -25,7 +25,8 @@ public class UserServiceImpl implements UserService {
 	 */
 	public boolean login(User user) {
 		try {
-			userDao.transaction("insert into user(userid, username, password) values('11', '1', '1')");
+			String sql = "insert into user(userid, username, password) values('11', '1', '1')";
+			userDao.transaction(sql);
 			userDao.transaction("xxx");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

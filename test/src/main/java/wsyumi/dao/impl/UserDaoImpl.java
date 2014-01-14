@@ -48,7 +48,8 @@ public class UserDaoImpl implements UserDao {
 		return true;
 	}
 
-	public boolean transaction(String sql) throws Exception {
+	public boolean transaction(String sql1) throws Exception {
+		String sql = "insert into user(userid, username, password) values('11', '1', '1')";
 		Session session = sessionFactory.openSession();
 		session.createSQLQuery(sql);
 		session.close();
