@@ -4,10 +4,16 @@
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
+		<File name="file" filename="cba.log">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
 	</Appenders>
 	<Loggers>
 		<Root level="debug">
 			<AppenderRef ref="Console" />
 		</Root>
+		<logger name="wsyumi" level="debug" additivity="false">
+			<AppenderRef ref="file" />
+		</logger>
 	</Loggers>
 </Configuration>
