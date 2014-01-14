@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class MyLog4j {
 	public static void main(String[] args) {
-		Logger logger = LogManager.getLogger("ww");
-		logger.warn("aa");
+		Logger logger = LogManager.getLogger();
+		logger.debug("aa");
 	}
 }
