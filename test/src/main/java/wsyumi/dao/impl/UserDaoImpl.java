@@ -19,7 +19,7 @@ import wsyumi.domain.User;
 public class UserDaoImpl implements UserDao {
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@SuppressWarnings("rawtypes")
 	public boolean login(User user) {
 		Session session = sessionFactory.openSession();
@@ -51,7 +51,9 @@ public class UserDaoImpl implements UserDao {
 	public boolean transaction(String sql1) throws Exception {
 		String sql = "insert into user(userid, username, password) values('11', '1', '1')";
 		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
 		session.createSQLQuery(sql);
+		tx.commit();
 		session.close();
 		return false;
 	}
