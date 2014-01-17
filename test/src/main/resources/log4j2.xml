@@ -21,6 +21,10 @@
 			<AppenderRef ref="stdout" />
 			<AppenderRef ref="debugFile" />
 		</logger>
+		
+		<logger name="test" level="debug" additivity="false">
+			<AppenderRef ref="stdout" />
+		</logger>
 	</Loggers>
 	
 </Configuration>
