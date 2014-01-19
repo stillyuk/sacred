@@ -9,8 +9,16 @@
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
+	<bean id="a" class="wsyumi.test.A" />
+
+	<bean id="task" class="wsyumi.task.Task" />
+
 	<bean id="proxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean">
-		<property name="targetName"><ref bean="task"/></property>
-		<property name="interceptorNames"><ref bean="myLog4j"/></property>
+		<property name="targetName">
+			<value>task</value>
+		</property>
+		<property name="interceptorNames">
+			<value>a</value>
+		</property>
 	</bean>
 </beans>
