@@ -9,10 +9,12 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import org.apache.catalina.core.StandardContext;
+
 public class B implements Filter {
 
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("..." + String.class.getClassLoader() + "...");
+		System.out.println("..." + StandardContext.class.getClassLoader() + "...");
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,

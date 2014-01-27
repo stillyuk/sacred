@@ -2,13 +2,12 @@ package wsyumi.log4j;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.stereotype.Component;
 
 /**
  * @author apple
  * 
  */
-@Component
+
 public class MyLog4j {
 
 	/**
@@ -23,5 +22,6 @@ public class MyLog4j {
 	 */
 	public void standardLog() {
 		logger.info("sdout");
+		System.out.println("...log4j2...");
 	}
 }

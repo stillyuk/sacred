@@ -9,10 +9,7 @@
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
-	<import resource="springMail.xml" />
-	<import resource="transactionManage.xml" />
-
-	<context:component-scan base-package="wsyumi" />
+	<context:component-scan base-package="wsyumi.task" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">
@@ -49,4 +46,11 @@
 			</list>
 		</property>
 	</bean>
+
+	<aop:config>
+		<aop:pointcut expression="within(wsyumi..*)" id="pointcut" />
+		<aop:aspect ref="myLog4j">
+			<aop:before method="standardLog()" pointcut="pointcut" />
+		</aop:aspect>
+	</aop:config>
 </beans>

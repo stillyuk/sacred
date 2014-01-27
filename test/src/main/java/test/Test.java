@@ -1,25 +1,29 @@
 package test;
 
-import java.lang.reflect.Method;
 import java.net.URL;
 
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.mail.javamail.JavaMailSender;
+import wsyumi.thread.SimpleThread;
+import wsyumi.utils.PropertiesUtil;
+import wsyumi.utils.SleepUtil;
 
 public class Test {
 	public static void main(String[] args) throws Exception {
-		URL[] url = new URL[] { new URL("file", "localhost", "D:/spring.jar") };
-		A a = new A(url);
-		Class<?> c = a.loadClass("cglib.A");
 
-		Method method = c.getMethod("something");
-		method.invoke(c.newInstance());
-		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
-		factory.setBeanClassLoader(a);
-		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
-		reader.loadBeanDefinitions("springMail.xml");
-		JavaMailSender javaMailSender = (JavaMailSender) factory.getBean("javaMailSender");
-		System.out.println(DefaultListableBeanFactory.class.getClassLoader());
+		URL[] url = new URL[] { new URL("file", "localhost", PropertiesUtil.PROJECT_PATH) };
+		A a = new A(url);
+//		Class<?> c = a.loadClass("cglib.A");
+//		a.close();
+//		Method method = c.getMethod("something");
+//		method.invoke(c.newInstance());
+		Runnable run = new SimpleThread();
+		Thread thread = new Thread(run);
+		thread.setContextClassLoader(a);
+		thread.start();
+
+		try {
+			SleepUtil.sleep(5000);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -3,9 +3,6 @@ package  wsyumi.task;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Task implements ITask {
 	public void task() {
 		Timer timer = new Timer();
