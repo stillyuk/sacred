@@ -1,49 +1,17 @@
 package beanfactory;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
-public class MyBeanFactory implements BeanFactory {
+import wsyumi.task.Task;
 
-	public Object getBean(String name) throws BeansException {
-		return null;
+public class MyBeanFactory {
+	public static void main(String... args) {
+		DefaultListableBeanFactory registry = new DefaultListableBeanFactory();
+		BeanDefinitionReader reader = new XmlBeanDefinitionReader(registry);
+		reader.loadBeanDefinitions("springAop.xml");
+		Task task = (Task) registry.getBean("task");
+		task.task();
 	}
-
-	public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
-		return null;
-	}
-
-	public <T> T getBean(Class<T> requiredType) throws BeansException {
-		return null;
-	}
-
-	public Object getBean(String name, Object... args) throws BeansException {
-		return null;
-	}
-
-	public boolean containsBean(String name) {
-		return false;
-	}
-
-	public boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
-		return false;
-	}
-
-	public boolean isPrototype(String name) throws NoSuchBeanDefinitionException {
-		return false;
-	}
-
-	public boolean isTypeMatch(String name, Class<?> targetType) throws NoSuchBeanDefinitionException {
-		return false;
-	}
-
-	public Class<?> getType(String name) throws NoSuchBeanDefinitionException {
-		return null;
-	}
-
-	public String[] getAliases(String name) {
-		return null;
-	}
-
 }

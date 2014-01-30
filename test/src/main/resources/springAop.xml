@@ -9,8 +9,8 @@
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
-	<bean id="myLog4j" class="wsyumi.log4j.MyLog4j"></bean>
-	<bean id="task" class="wsyumi.task.Task"></bean>
+	<bean id="myLog4j" class="wsyumi.log4j.MyLog4j" />
+	<bean id="task" class="wsyumi.task.Task" />
 	<aop:config>
 		<aop:pointcut id="pointcut" expression="within(wsyumi.task.*)" />
 		<aop:aspect ref="myLog4j">
