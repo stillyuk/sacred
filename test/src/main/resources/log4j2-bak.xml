@@ -25,5 +25,5 @@
 			<AppenderRef ref="stdout" />
 		</logger>
 	</Loggers>
-	
+
 </Configuration>
