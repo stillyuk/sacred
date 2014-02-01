@@ -5,10 +5,10 @@
 		<Console name="stdout" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
-		<File name="infoFile" filename="info.log" append="false">
+		<File name="infoFile" filename="log.log" append="false">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="debugFile" filename="debug.log" append="false">
+		<File name="debugFile" filename="log.log" append="false">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
 	</Appenders>
